@@ -13,3 +13,4 @@ extern void placePixel(int position, CRGB colour);
 extern void drawPixels(float position, float count, CRGB colour);
 extern void fadePixels(uint8_t amount);
 extern void clearPixels();
+extern uint32_t esp_random_range(uint32_t out_min = 0, uint32_t out_max = 255);

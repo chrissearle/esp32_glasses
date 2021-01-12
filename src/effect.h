@@ -13,5 +13,6 @@ protected:
 
 public:
     Effect(int ledCount) : length(ledCount){};
+    virtual ~Effect(){};
     virtual void draw() = 0;
 };

@@ -50,3 +50,12 @@ void clearPixels()
 {
     FastLED.clear();
 }
+
+uint32_t esp_random_range(uint32_t out_min, uint32_t out_max)
+{
+    double rnd = (double)esp_random();
+    double range = (double)(out_max - out_min);
+    double divisor = (double)UINT32_MAX;
+
+    return round((rnd * range) / divisor + out_min);
+}
