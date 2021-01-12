@@ -15,14 +15,17 @@ static const CRGB colours[] = {
 
 void TwinkleEffect::draw()
 {
-    passCount++;
-
-    if (passCount >= length)
+    EVERY_N_MILLISECONDS(40)
     {
-        passCount = 0;
+        passCount++;
 
-        clearPixels();
+        if (passCount >= length)
+        {
+            passCount = 0;
+
+            clearPixels();
+        }
+
+        drawPixels(random(length), 1, colours[random(ARRAYSIZE(colours))]);
     }
-
-    drawPixels(random(length), 1, colours[random(ARRAYSIZE(colours))]);
 }
