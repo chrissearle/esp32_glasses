@@ -16,8 +16,11 @@ extern "C"
 #include "kr.h"
 #include "circles.h"
 #include "rainbow.h"
+#include "cylon.h"
+#include "marquee.h"
+#include "twinkle.h"
 
-uint8_t effectCount = 7;
+uint8_t effectCount = 11;
 
 #define LED_PIN 5
 #define NUM_LEDS 32
@@ -64,8 +67,20 @@ void runEffect(uint8_t effect)
   case 5:
     currentEffect = new CirclesEffect(NUM_LEDS, false, true);
     break;
-  default:
+  case 6:
     currentEffect = new RainbowEffect(NUM_LEDS);
+    break;
+  case 7:
+    currentEffect = new CylonEffect(NUM_LEDS);
+    break;
+  case 8:
+    currentEffect = new CylonEffect(NUM_LEDS, true);
+    break;
+  case 9:
+    currentEffect = new MarqueeEffect(NUM_LEDS);
+    break;
+  default:
+    currentEffect = new TwinkleEffect(NUM_LEDS);
     break;
   }
 }
@@ -89,6 +104,7 @@ void btnPause()
 void btnOff()
 {
   enabled = !enabled;
+  running = enabled;
 }
 
 void setup()
