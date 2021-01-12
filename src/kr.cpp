@@ -17,14 +17,11 @@ void KnightRiderEffect::draw()
         if (mirrored)
             limit = (length / 2) - width;
 
-        int position = beatsin16(32, 0, limit);
+        int position = beatsin16(64, 0, limit);
 
-        for (int i = position; i < position + width; i++)
-        {
-            placePixel(i, CRGB::Red);
+        drawPixels(position, 3, CRGB::Red);
 
-            if (mirrored)
-                placePixel(length - i - 1, CRGB::Red);
-        }
+        if (mirrored)
+            drawPixels(length - width - position, 3, CRGB::Red);
     }
 }
