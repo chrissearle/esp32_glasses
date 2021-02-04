@@ -10,9 +10,11 @@ A lot of the concepts and at least half of the code comes from https://github.co
 
 Board: Lolin D32
 
-USB: 5v line to LEDs
-GND: 0v line to LEDs
-5: Data line to LEDs
 
-17: to one side of switch
-GND: to other side of switch
+| Pin | Connection              |
+| --- | ----------------------- |
+| USB | 5v line to LEDs         |
+| GND | 0v line to LEDs         |
+| 5   | Data line to LEDs.      |
+| 17  | to one side of switch   |
+| GND | to other side of switch |
