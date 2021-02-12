@@ -29,7 +29,7 @@ uint8_t effectCount = 11;
 
 CRGB leds[NUM_LEDS] = {0};
 
-uint32_t maxPower = 800;
+uint32_t maxPower = 100;
 uint8_t brightness = 255;
 
 OneButton btn = OneButton(BUTTON_PIN, true, true);
